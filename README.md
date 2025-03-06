@@ -3,7 +3,11 @@
 The Dockerfile pull the latest HEAD from lllyasviel SD Webui (https://github.com/lllyasviel/stable-diffusion-webui-forge).
 
 # docker-shared filestructure
-Create a folder $HOME/docker-shared to hold models instead of having them copied on every container run:
+Create a folder:
+```
+mkdir $HOME/docker-shared
+```
+to hold models instead of having them copied on every container run:
 ```
 docker-shared/
 ├── checkpoints/
@@ -14,6 +18,8 @@ docker-shared/
 ```
 
 To build the image:
-$ cd docker-forge
-$ docker build -t forge .
-$ docker run --gpus all -p 7860:7860 -v $HOME/docker-shared:/app/repo/docker-shared forge
+```
+cd docker-forge
+docker build -t forge .
+docker run --gpus all -p 7860:7860 -v $HOME/docker-shared:/app/repo/docker-shared forge
+```
