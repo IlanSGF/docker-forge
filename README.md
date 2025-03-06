@@ -4,12 +4,14 @@ The Dockerfile pull the latest HEAD from lllyasviel SD Webui (https://github.com
 
 # docker-shared filestructure
 Create a folder $HOME/docker-shared to hold models instead of having them copied on every container run:
-docker-shared
- \- checkpoints
- \- embeddings
- \- loras
- \- upscaler
- \- vae
+```
+docker-shared/
+├── checkpoints/
+├── embeddings/
+├── loras/
+├── upscaler/
+└── vae/
+```
 
 To build the image:
 $ cd docker-forge
